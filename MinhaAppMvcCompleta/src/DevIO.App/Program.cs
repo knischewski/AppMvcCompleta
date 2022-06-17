@@ -1,3 +1,4 @@
+using DevIO.App.Configurations;
 using DevIO.App.Data;
 using DevIO.Data.Context;
 using Microsoft.AspNetCore.Identity;
@@ -20,6 +21,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.ResolveDependencies();
 
 var app = builder.Build();
 
