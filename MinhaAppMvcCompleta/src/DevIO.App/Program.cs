@@ -22,7 +22,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-builder.Services.AddControllersWithViews();
+builder.Services.AddMvcConfiguration();
 
 builder.Services.ResolveDependencies();
 
@@ -47,6 +47,8 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseGlobalizationConfig();
 
 app.MapControllerRoute(
     name: "default",
